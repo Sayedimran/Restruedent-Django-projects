@@ -1,0 +1,109 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+
+
+{% block banner_slider %}
+<!--Banner Slider-->
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'Shop/crusleSlider/swee8.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'Shop/crusleSlider/sweets3.jpg.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'Shop/crusleSlider/sweets5.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" type="" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" type="" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+<!-- End Banner Slider -->
+
+{% endblock banner_slider %}
+
+{% block main-content %}
+
+<!-- 1st Product Slider -->
+<div class="m-3">
+    <h2 class="text-light">Foods</h2>
+    <!-- Slider 1 -->
+    <div class="owl-carousel" id="slider1">
+        {% for F in foods %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{F.product_image.url}}" alt="Card image cap">
+            <div class="card-body">
+              <h5  class="card-title">{{F.title}}</h5>
+            
+              {% comment %} <div><p class="text-dark descrripimh">{{F.description}}</p></div> {% endcomment %}
+              {% comment %} <a href="{% url 'product-detail' F.id %}" class="card-text"></a> {% endcomment %}
+              <a  class="btn btn-primarys"> Price: {{F.selling_price}} TK</a>
+              <a  class="btn mt-2 font-weight-bold text-discount"> Discount: {{F.discounted_price}}  TK</a>
+              
+            </div>
+            <button class="btn btn-danger"> <a class="nav-link text-light" href="{% url 'product-detail' F.id %}">Details</a></button>
+          </div>
+        {% comment %} <a href="{% url 'product-detail' F.id %}" class="btn">
+            <div class="item"><img src="{{F.product_image.url}}" alt="" height="200px"><span
+                    class="fw-bold">{{F.title}}</span><br><span class="fs-5">{{F.discounted_price}}</span></div>
+        </a> {% endcomment %}
+        {% endfor %}
+    </div>
+</div>
+    
+
+
+<!--  boooks slider -->
+
+
+<div class="m-3">
+  <h2 class="text-light">Electronics</h2>
+  <!-- Slider 1 -->
+  <div class="owl-carousel" id="slider1">
+      {% for E in Electronics %}
+      <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{E.product_image.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5  class="card-title">{{E.title}}</h5>
+          
+            {% comment %} <div><p class="text-dark descrripimh">{{E.description}}</p></div> {% endcomment %}
+            {% comment %} <a href="{% url 'product-detail' E.id %}" class="card-text"></a> {% endcomment %}
+            <a  class="btn btn-primarys"> Price: {{E.selling_price}} TK</a>
+            <a  class="btn mt-2 font-weight-bold text-discount"> Discount: {{E.discounted_price}}  TK</a>
+            
+          </div>
+          <button class="btn btn-danger"> <a class="nav-link text-light" href="{% url 'product-detail' E.id %}">Details</a></button>
+        </div>
+      {% comment %} <a href="{% url 'product-detail' F.id %}" class="btn">
+          <div class="item"><img src="{{F.product_image.url}}" alt="" height="200px"><span
+                  class="fw-bold">{{F.title}}</span><br><span class="fs-5">{{F.discounted_price}}</span></div>
+      </a> {% endcomment %}
+      {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock main-content %}
+
+
+
+
+{% block livesale %}
+
+
+
+
+
+
+{% endblock livesale %}
+
+
+

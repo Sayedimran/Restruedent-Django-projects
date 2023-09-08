@@ -1,0 +1,123 @@
+.owl-carousel .item{
+ /* border: 1px solid black; */
+ font-size: 24px;
+ text-align: center;
+ margin-top: 20px;;
+}
+
+.bg-body-tertiary{
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(rgb(5, 5, 47) ,rgba(157, 105, 8, 0.725),rgb(14, 5, 48));
+}
+.text-dangers {
+    background:transparent;
+    box-shadow: 2px 2px 15px rgb(199, 9, 113);
+    padding: 10px;
+    color: #fff;
+    font: 900;
+   
+    font-size: 24px;
+    height: 50px;
+    border-radius: 10px ;
+}
+
+.logos{
+    margin-top: -25px;
+    height: 100px;
+}
+
+.container-fluid li a{
+    color: #fff;
+    
+}
+.dropdown-menu {
+    background: #000;
+   
+}
+.dropdown-menu li a {
+    color: goldenrod;
+   
+}
+.dropdown-menu li a:hover {
+   
+    background: #000;
+    color: #fff;
+}
+.navbar{
+    
+    padding: 15px;
+}
+.menubtn{
+    color: transparent;
+    background: transparent;
+    border: none;
+}
+.bg-successs{
+    padding: 30px;
+    margin-top: 100px;
+    color: #fff;
+    background: #000;
+}
+.carousel ,.slide img{
+  
+    height: 650px;
+    width:100% ;
+}
+
+
+.text-centerss{
+    color:rgb(143, 9, 60);
+     text-align: center;
+     justify-content: center;
+     font-size: 24px;
+     font-weight: bold;
+}
+.owl-next{
+ float:right;
+}
+.owl-prev{
+ float:left;
+}
+.owl-prev span{
+ font-size: 24px;
+ font-weight: bold;
+}
+.owl-next span{
+ font-size: 24px;
+ font-weight: bold;
+}
+
+.btn-primarys{
+   background: #000;
+   color: #fff;
+   display: grid;
+   justify-items: center;
+}
+.btn-primarys:hover{
+   color: chartreuse;
+   color: #fff;
+   display: grid;
+   justify-items: center;
+}
+.text-discount{
+    font: bolder;
+    font-size: 16px;
+}
+
+body{
+    /* Created with https://www.css-gradient.com */
+    background: #161616;
+    }
+    h1{
+      color:#fff;
+    }
+    .lead{
+      color:#aaa;
+    }
+    
+    .wrapper{margin:10vh}
+  /* card */
+    
+ 

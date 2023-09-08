@@ -1,0 +1,50 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block main-content %}
+<!-- product details -->
+<div class="container   mt-5 product-detaiuls ">
+    <div class="row">
+        <div class="col-sm-6 text-center align-self-center">
+            <img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-sm-5 offset-sm-1 text-light">
+            <h2>Product Title: {{product.title}}</h2>
+            <hr>
+            <p>{{product.description}}</p> 
+
+                
+            <h4 class="mt-3  "> 
+                <span>
+                    Selling price :   {{product.selling_price}} Tk
+                 </span> <br>
+                Discount: <span class="text-decoration-line-through">{{product.discounted_price}}</span>TK  <br>
+              <br>  
+            <small class=" gap-1 link-light ">Total: {{product.selling_price}}</small></h4> <br>
+            <a href="" class="btn text-dangers text-primary px-5 py-2">Add to Cart</a>
+            <a href="" class="btn text-dangers   px-5 py-2 ms-4">Buy Now</a>
+            <h5 class="mt-5">Available Offers</h5>
+            <ul class="text-light" >
+                <li>Bkash Offer 5% Unlimited Cashback on Payment</li>
+                <li>Special Price Get extra Tk.5000 off (price inclusive of discount)</li>
+                <li>Partner Offer Tk. 1000 Gift Card on Every 1000th Transaction with Bkash, Nagad.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}
+
+
+{% comment %} 
+
+{% block livesale %}
+
+
+
+
+
+
+{% endblock livesale %} {% endcomment %}
+
+
+
