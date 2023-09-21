@@ -1,0 +1,46 @@
+{% extends 'Shop/base.html' %}
+{% load static %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+        
+            <div class="list-group mx-lg-5">
+                            <a href="{% url 'Electronic' %}" class="list-group-item list-group-item-action active" aria-current="true">
+                                ALL Electrocnis 
+                            </a>
+                            <a href="{% url 'Electronicitem' 'Watch' %}" class="list-group-item list-group-item-action">camera</a>
+                            <a href="{% url 'Electronicitem' 'infinity' %}" class="list-group-item list-group-item-action">watch</a>
+                           
+                            <a href="{% url 'Electronicitem' 'above' %}" class="list-group-item list-group-item-action">Above 20000</a>
+                            <a href="{% url 'Electronicitem' 'below' %}" class="list-group-item list-group-item-action">Below 20000</a>
+                        </div>
+        </div>
+        <div class="">
+            <div class=" row ">
+                {% for product in Electronic  %}
+                <div class="col-sm-4 text-center  mb-4">
+                    <a class="m-5" href="{% url 'product-detail' product.id %}" class="btn">
+                        <div class="item m-lg-4">
+                           
+                            <img src="{{product.product_image.url}}" alt="" height="300" class="">
+
+                            <div class=" text-light  ">{{product.title}}</div>
+                        </div>
+                        <div class=" text-light   ">
+                            
+                             <small
+                                class="fw-light   ">TK: {{product.selling_price}}</small>
+                                  <br>
+                                <small
+                                class="fw-light text-decoration-line-through "> Tk: {{product.discounted_price}} </small>
+                            </div>  
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock main-content %}

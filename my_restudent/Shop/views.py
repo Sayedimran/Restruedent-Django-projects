@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.views import View
 from . models import Product,Customer,Cart, OrderPlaced
-
+from . forms import customarResgistrationFrom
+from  django.contrib import messages
 # Create your views here.
 class ProductView(View):
     def get(self, request):
@@ -21,15 +22,36 @@ class ProductDetailView(View):
     product = Product.objects.get(pk=pk)
     return render(request, 'Shop/productdetail.html',{'product': product})
 
-def Electronics( request, data =None ):
+def Electronicss( request, data =None ):
    if data == None:
       Electronic = Product.objects.filter(category = 'E')
-   elif data == 'APPle' or data == 'infinity':
-      Electronic = Product.objects.filter(category ='E')
-   return render (request,'Shop/Electronics.html')
+   elif data == 'Watch' or data == 'infinity':
+      Electronic = Product.objects.filter(category ='E').filter( brand = data)
+   elif data == 'below':
+      Electronic = Product.objects.filter(category = 'E').filter(discounted_price__lt =10000)
+   elif data == 'above':
+      Electronic = Product.objects.filter(category = 'E').filter(discounted_price__gt =10000)
+   return render (request,'Shop/Electronics.html' ,{'Electronic':Electronic})
 
-# def lehenga(request):
-#  return render(request, 'Shop/lehenga.html')
+def login(request):
+   return render(request,'Shop/login.html')
+
+class customerRegistrationview(View):
+   def get(self,request):
+      form = customarResgistrationFrom()
+      return render(request,'Shop/cutomerRegistraton.html',{'form':form})
+
+   def post(self,request):
+      form = customarResgistrationFrom(request.POST)
+      if form.is_valid():
+         messages.success(request,'Congratulations  registrations done')
+      
+         form.save()
+      return render(request,'Shop/cutomerRegistraton.html',{'form':form})
+      
+   
+
+
 
 # def add_to_cart(request):
 #  return render(request, 'Shop/addtocart.html')
