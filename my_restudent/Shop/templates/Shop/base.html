@@ -66,8 +66,8 @@
                   </a>
                   <ul class="dropdown-menu">
                     {% if request.user.is_authenticated %}
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Pssword Change </a></li>
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url "passwordchange" %}">Pssword Change </a></li>
                     
                     <li><a class="dropdown-item" href="{% url 'logout' %}" >Log Out</a></li>
                     {% else %}

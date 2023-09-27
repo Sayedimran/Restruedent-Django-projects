@@ -51,7 +51,15 @@ class customerRegistrationview(View):
       
    
 
+def profile (request):
+    return render   (request, 'Shop/profile.html')
 
+def address(request):
+ return render(request, 'Shop/address.html')
+
+
+def change_password(request):
+ return render(request, 'Shop/changepassword.html' )
 
 # def add_to_cart(request):
 #  return render(request, 'Shop/addtocart.html')
