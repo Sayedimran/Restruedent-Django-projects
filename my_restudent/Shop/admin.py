@@ -8,7 +8,6 @@ from .models import (
     OrderPlaced
 )
 
-# Register your models here.
 @admin.register(Customer)
 class CustomerModelAdmin(admin.ModelAdmin):
     list_display =['id', 'user', 'name', 'division','district','thana','villorroad','zipcode']

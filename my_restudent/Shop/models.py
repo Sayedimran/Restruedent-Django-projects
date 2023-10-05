@@ -1,10 +1,9 @@
-from django.db import models
 
-# Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 DIVISION_CHOICES = (
+    ('','select divisions-----'),
     ('Dhaka','Dhaka'),
     ('Rangpur','Rangpur'),
     ('Rajshahi','Rajshahi'),
@@ -60,7 +59,9 @@ class Cart(models.Model):
     def __str__(self):
         return str(self.id)
 
-
+    @property
+    def total_cost(self):
+        return self.quantity*self.product.selling_price
 
 STATUS_CHOICE = (
     ('Accepted','Accepted'),
@@ -78,3 +79,7 @@ class OrderPlaced(models.Model):
     ordered_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=50, choices=STATUS_CHOICE, default='Pending')
 
+    
+    @property
+    def total_cost(self):
+        return self.quantity * self.product.selling_price

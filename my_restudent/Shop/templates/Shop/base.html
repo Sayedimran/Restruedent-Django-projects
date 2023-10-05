@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand text-dangers " href="#"><img class="logos" src="{% static 'Shop/images/logo.png' %}" alt=""> </a>
+          <a class="navbar-brand " href="#"><img class="logos  mx-lg-5" src="{% static "Shop/images/Untitled design (3).png" %}" alt=""> </a>
           <button class=" menubtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=" d-lg-none  navbars   "> <img src="{% static 'Shop/images/icons8-menu.svg' %}" alt="">  </span>
           </button>
@@ -62,7 +62,7 @@
               <li class="nav-item" >
                 <a  class="nav-link" href="#"> <li class="nav-item dropdown">
                   <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{% static 'Shop/images/settings.png' %}" alt=""> 
+                    <span>{{request.user}}  </span> <img src="{% static 'Shop/images/settings.png' %}" alt=""> 
                   </a>
                   <ul class="dropdown-menu">
                     {% if request.user.is_authenticated %}
@@ -87,7 +87,7 @@
             </ul>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0   toolsIcon ">
               <li class="nav-item tools" >
-                <a  class="nav-link" href="#"> <img src="{% static 'Shop/images/add cart.png' %}" alt=""> <sup  class="" href="#">10</sup> </a>
+                <a  class="nav-link" href="{% url "showCart" %}"> <img src="{% static 'Shop/images/add cart.png' %}" alt=""> <sup  class="" href="#"><span class="qunatyitu">{{totalitem}}</span></sup> </a>
              </li>
             </ul>
             <form class="d-flex" role="search">
